@@ -35,6 +35,10 @@ public class Options implements Serializable {
     @ScreenOrientation
     private int screenOrientation = SCREEN_ORIENTATION_UNSPECIFIED;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    //added by sagar
+    private TakePictureFrom takePictureFrom = TakePictureFrom.GALLERY_AND_CAMERA;
+
     private Options() {
     }
 
@@ -147,4 +151,22 @@ public class Options implements Serializable {
     public @interface ScreenOrientation {
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    //added by sagar
+    public enum TakePictureFrom {
+        GALLERY_AND_CAMERA,
+        ONLY_CAMERA
+    }
+
+    public Options takePictureFrom(
+            TakePictureFrom takePictureFrom
+    ) {
+        check();
+        this.takePictureFrom = takePictureFrom;
+        return this;
+    }
+
+    public TakePictureFrom getTakePictureFrom() {
+        return this.takePictureFrom;
+    }
 }

@@ -6,14 +6,17 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.fxn.adapters.MyAdapter;
 import com.fxn.pix.Options;
 import com.fxn.pix.Pix;
 import com.fxn.utility.ImageQuality;
 import com.fxn.utility.PermUtil;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
         options = Options.init()
                 .setRequestCode(100)
                 .setCount(3)
-            .setFrontfacing(false)
-            .setImageQuality(ImageQuality.LOW)
-            .setPreSelectedUrls(returnValue)
-            .setScreenOrientation(Options.SCREEN_ORIENTATION_PORTRAIT)
+                .setFrontfacing(false)
+                .setImageQuality(ImageQuality.LOW)
+                .setPreSelectedUrls(returnValue)
+                .setScreenOrientation(Options.SCREEN_ORIENTATION_PORTRAIT)
                 .setPath("/akshay/new")
         ;
         recyclerView.setAdapter(myAdapter);
